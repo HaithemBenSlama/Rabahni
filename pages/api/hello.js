@@ -1,5 +1,15 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+import { sql } from "@vercel/postgres";
 
-export default function handler(req, res) {
-  res.status(200).json({ name: 'John Doe' })
+export default async function handler(request, response) {
+  try {
+    // Retrieve accounts from the "accounts" table
+    const accounts = await sql`
+      SELECT id, email, token
+      FROM accounts;
+    `;
+
+    return response.status(200).json({ accounts });
+  } catch (error) {
+    return response.status(500).json({ error });
+  }
 }
