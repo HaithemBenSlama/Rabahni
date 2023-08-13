@@ -37,7 +37,10 @@ const Step = () => {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center bg-gradient-to-r from-gray-900 to-gray-600 text-white min-h-screen">
+    <div
+      id="nextSection"
+      className="flex flex-col items-center justify-center bg-gradient-to-r from-gray-900 to-gray-600 text-white min-h-screen"
+    >
       <h1 className="text-3xl md:text-5xl font-extrabold text-white my-10 md:my-15">
         How it Works ?
       </h1>
